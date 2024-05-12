@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(lightpink, white);
+			overflow: hidden;
+		}
+		
+		.heart {
+			display: grid;
+			grid-gap: 2px;
+			grid-template-columns: repeat(16, 1fr);
+		}
+		
+		.heart > * {
+			width: 1em;
+			height: 1em;
+			font-size: 15px;
+		}
+		
+		.heart dot {
+			background-color: red;
+			animation: animate 5s infinite ease-out;
+			filter: opacity(0);
+		}
+		.heart dot:nth-of-type(2n) {animation-delay: 0.05s;}
+		.heart dot:nth-of-type(3n) {animation-delay: 0.10s;}
+		.heart dot:nth-of-type(4n) {animation-delay: 0.15s;}
+		.heart dot:nth-of-type(5n) {animation-delay: 0.20s;}
+		.heart dot:nth-of-type(6n) {animation-delay: 0.25s;}
+		.heart dot:nth-of-type(7n) {animation-delay: 0.30s;}
+		.heart dot:nth-of-type(8n) {animation-delay: 0.35s;}
+		.heart dot:nth-of-type(9n) {animation-delay: 0.40s;}
+		.heart dot:nth-of-type(10n) {animation-delay: 0.45s;}
+		.heart dot:nth-of-type(11n) {animation-delay: 0.5s;}
+		@keyframes animate {
+			0% {filter: opacity(0); transform: translateY(-10em);}
+			25%, 75% {filter: opacity(1); transform: translateY(0);}
+			100% {filter: opacity(0); transform: translateY(10em);}
+		}
+	</style>
+</head>
+<body>
+	<div class="heart"></div>
+	<script>
+		let jie = ['________________',
+						'_____OO__OO_____',
+						'_____OO__OO_____',
+						'_OOOOOOOOOOOOOO_',
+						'_____OO__OO_____',
+						'_____OO__OO_____',
+						'__OOOOOOOOOOOO__',
+						'__OOOOOOOOOOOO__',
+						'_____OO_____OO__',
+						'_____OO_____OO__',
+						'_____OO_____OO__',
+						'_____OO_OOOOO___',
+						'_____OO_OOOOO___',
+						'_____OO_________',
+						'_____OO_________',
+						'________________'].join('');
+
+
+
+		let ri = [
+    '________________',
+    '________________',
+    '___OOOOOOOOOO___',
+    '___OOOOOOOOOO___',
+    '___OO______OO___',
+    '___OO______OO___',
+    '___OO______OO___',
+    '___OOOOOOOOOO___',
+    '___OOOOOOOOOO___',
+    '___OO______OO___',
+    '___OO______OO___',
+    '___OO______OO___',
+    '___OOOOOOOOOO___',
+    '___OOOOOOOOOO___',
+    '___OO______OO___',
+    '________________',
+].join('');
+let kuai = [
+    '________________',
+    '___O_____O______',
+    '___O_____O______',
+    '___O__OOOOOOOO__',
+    '_OOOOOOOOOOOOO__',
+    '_OOOOOO_OO__OO__',
+    '_OOO_O__OO__OO__',
+    '_OOO____OO__OO__',
+    '_O_O_OOOOOOOOOO_',
+    '___O____OOO_____',
+    '___O___OOOOO____',
+    '___O___OO_OO____',
+    '___O__OOO_OOOO__',
+    '___O_OOO___OOOO_',
+    '___O_OO______OO_',
+    '________________',
+].join('');
+let le = [
+    '________________',
+    '___________OOO__',
+    '___OOOOOOOOOOO__',
+    '___OOOOOOO______',
+    '__OO___OO_______',
+    '__OO___OO_______',
+    '__OO___OO_______',
+    '__OOOOOOOOOOOOO_',
+    '__OOOOOOOOOOOOO_',
+    '____OO_OO_OO____',
+    '___OOO_OO_OOO___',
+    '__OOO__OO__OOO__',
+    '_OOO___OO___OOO_',
+    '_OO_OOOOO____OO_',
+    '_____OOOO_______',
+    '________________',
+].join('');
+let ma = [
+    '________________',
+    '___OO_OOOOOOOO__',
+    '___O__OOOOOOOO__',
+    '__OO___OO___OO__',
+    '_OOOOOOOO___OO__',
+    '_OOOOOOOO___OO__',
+    '__OO_OOOO___OO__',
+    '__OO_O_OOOOOOOO_',
+    '__O_OO_OOOOOOOO_',
+    '_OOOOO_______OO_',
+    '__OOO_OOOOOOOOO_',
+    '___OOOOOOOOOOOO_',
+    '__OOOOO_____OOO_',
+    '_OOO_O___OOOOO__',
+    '_OO______OOOOO__',
+    '________________',
+].join('');
+let gan = [
+    '________________',
+    '________________',
+    '__OOOOOOOOOOOO__',
+    '__OOOOOOOOOOOO__',
+    '_______OO_______',
+    '_______OO_______',
+    '_______OO_______',
+    '_OOOOOOOOOOOOOO_',
+    '_OOOOOOOOOOOOOO_',
+    '_______OO_______',
+    '_______OO_______',
+    '_______OO_______',
+    '_______OO_______',
+    '_______OO_______',
+    '_______OO_______',
+    '________________',
+].join('');
+		let pattern = [
+		'___OOO____OOO___',
+		'__OOOOO__OOOOO__',
+		'_OOOOOO__OOOOOO_',
+		'OOOOOOOOOOOOOOOO',
+		'OOOOOOOOOOOOOOOO',
+		'OOOOOOOOOOOOOOOO',
+		'OOOOOOOOOOOOOOOO',
+		'OOOOOOOOOOOOOOOO',
+		'_OOOOOOOOOOOOOO_',
+		'_OOOOOOOOOOOOOO_',
+		'__OOOOOOOOOOOO__',
+		'___OOOOOOOOOO___',
+		'____OOOOOOOO____',
+		'_____OOOOOO_____',
+		'______OOOO______',
+		'_______OO_______'
+		].join('');
+		let kai = [
+    '________________',
+    '________________',
+    '__OOOOOOOOOOOOO_',
+    '__OOOOOOOOOOOOO_',
+    '____OO____OO____',
+    '____OO____OO____',
+    '____OO____OO____',
+    '_OOOOOOOOOOOOOO_',
+    '_OOOOOOOOOOOOOO_',
+    '____OO____OO____',
+    '____OO____OO____',
+    '____OO____OO____',
+    '__OOOO____OO____',
+    '_OOOO_____OO____',
+    '_OOO______OO____',
+    '________________',
+].join('');
+let xin = [
+    '________________',
+    '______OOO_______',
+    '_______OO_______',
+    '____OO_OOO______',
+    '____OO__OO__O___',
+    '__OOOO__OO_OO___',
+    '__OOOO_____OOO__',
+    '__OOOO______OO__',
+    '_OO_OO______OOO_',
+    '_OO_OO_______OO_',
+    '_OO_OO_____OOOO_',
+    '__O_OO_____OO___',
+    '____OO_____OO___',
+    '_____OOOOOOO____',
+    '______OOOOO_____',
+    '________________',
+].join('');
+
+		let tag = {'O': 'dot', '_': 'span'};
+		let $heart = document.querySelector('.heart');
+		let currentPatternIndex = 0;
+		const allPatterns = [gan,ma,jie,ri,kuai,le,pattern,kai,kai,xin,xin,pattern];
+		function updatePattern() {
+			$heart.innerHTML = '';  // Clear current pattern
+			allPatterns[currentPatternIndex].split('').forEach((x) => {
+				let element = document.createElement(tag[x]);
+				$heart.append(element);
+			});
+			currentPatternIndex = (currentPatternIndex + 1) % allPatterns.length;
+		}
+
+		updatePattern();  // Initial display
+		setInterval(updatePattern, 1900);  // Change pattern every 10 seconds
+	</script>
+</body>
+</html>
+
+
