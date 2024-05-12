@@ -4,48 +4,53 @@
 	<meta charset="UTF-8">
 	<title>母亲节快乐</title>
 	<style>
-		html, body {
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background: linear-gradient(lightpink, white);
-			overflow: hidden;
-		}
-		
-		.heart {
-			display: grid;
-			grid-gap: 2px;
-			grid-template-columns: repeat(16, 1fr);
-		}
-		
-		.heart > * {
-			width: 1em;
-			height: 1em;
-			font-size: 15px;
-		}
-		
-		.heart dot {
-			background-color: red;
-			animation: animate 5s infinite ease-out;
-			filter: opacity(0);
-		}
-		.heart dot:nth-of-type(2n) {animation-delay: 0.05s;}
-		.heart dot:nth-of-type(3n) {animation-delay: 0.10s;}
-		.heart dot:nth-of-type(4n) {animation-delay: 0.15s;}
-		.heart dot:nth-of-type(5n) {animation-delay: 0.20s;}
-		.heart dot:nth-of-type(6n) {animation-delay: 0.25s;}
-		.heart dot:nth-of-type(7n) {animation-delay: 0.30s;}
-		.heart dot:nth-of-type(8n) {animation-delay: 0.35s;}
-		.heart dot:nth-of-type(9n) {animation-delay: 0.40s;}
-		.heart dot:nth-of-type(10n) {animation-delay: 0.45s;}
-		.heart dot:nth-of-type(11n) {animation-delay: 0.5s;}
-		@keyframes animate {
-			0% {filter: opacity(0); transform: translateY(-10em);}
-			25%, 75% {filter: opacity(1); transform: translateY(0);}
-			100% {filter: opacity(0); transform: translateY(10em);}
-		}
-	</style>
+	html, body {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(lightpink, white);
+		overflow: hidden;
+	}
+	
+	.heart {
+		display: grid;
+		grid-gap: 2px;
+		grid-template-columns: repeat(16, 1fr);
+		width: 61.8vw;  /* 宽度为视窗宽度的 61.8% */
+		height: calc(61.8vw * (1 / 1.618)); /* 高度为宽度除以黄金比例 */
+		max-width: 61.8vh;  /* 最大宽度为视窗高度的 61.8% */
+		max-height: calc(61.8vh * (1 / 1.618)); /* 最大高度为最大宽度除以黄金比例 */
+	}
+	
+	.heart > * {
+		width: 1em;
+		height: 1em;
+		font-size: calc(min(3.618vw, 3.618vh)); /* 根据视窗宽度和高度的黄金比例调整字体大小 */
+	}
+	
+	.heart dot {
+		background-color: red;
+		animation: animate 5s infinite ease-out;
+		filter: opacity(0);
+	}
+	.heart dot:nth-of-type(2n) {animation-delay: 0.05s;}
+	.heart dot:nth-of-type(3n) {animation-delay: 0.10s;}
+	.heart dot:nth-of-type(4n) {animation-delay: 0.15s;}
+	.heart dot:nth-of-type(5n) {animation-delay: 0.20s;}
+	.heart dot:nth-of-type(6n) {animation-delay: 0.25s;}
+	.heart dot:nth-of-type(7n) {animation-delay: 0.30s;}
+	.heart dot:nth-of-type(8n) {animation-delay: 0.35s;}
+	.heart dot:nth-of-type(9n) {animation-delay: 0.40s;}
+	.heart dot:nth-of-type(10n) {animation-delay: 0.45s;}
+	.heart dot:nth-of-type(11n) {animation-delay: 0.5s;}
+	@keyframes animate {
+		0% {filter: opacity(0); transform: translateY(-10em);}
+		25%, 75% {filter: opacity(1); transform: translateY(0);}
+		100% {filter: opacity(0); transform: translateY(10em);}
+	}
+</style>
+
 </head>
 <body>
 	<div class="heart"></div>
